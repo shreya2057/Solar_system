@@ -11,6 +11,16 @@ angle = 0;
 //speed for rotation of planets
 let speed = 0.000007;
 
+//diameter of  orbit
+mercury = 140;
+venus = 218;
+earth = 151;
+mars = 249;
+jupiter = 752;
+saturn = 990;
+uranus = 1476;
+neptune = 2237;
+
 
 //diameter of planets
 mercuryDiameter = 10;
