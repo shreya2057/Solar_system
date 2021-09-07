@@ -8,8 +8,6 @@ let centerY = height/2;
 
 
 angle = 0;
-//speed for rotation of planets
-let speed = 0.000007;
 
 
 planetDiameter = [
@@ -46,14 +44,14 @@ planetColor = [
 ];
 
 planetSpeed = [
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0
+  0.00129,
+  0.00048,
+  0.00057,
+  0.0011,
+  0.00034,
+  0.000142,
+  0.00014,
+  0.00054
 ];
 
 
@@ -69,7 +67,6 @@ function draw() {
 
 function solarSystem(){
  
-  let angle = 0;
 
   sunRadius = 1392680;
   drawSun({
@@ -102,7 +99,7 @@ function orbit(){
 function planet(){
   translate(centerX, centerY);
 
-  for(var i = 0; i< 8; i++){
+  for(var i = 7; i>= 0; i--){
     if(i==4){
       drawPlanet(planetOrbit[i]/2, planetDiameter[i]/2000, planetColor[i], planetSpeed[i]);
     }
@@ -134,7 +131,7 @@ function drawPlanet(orbitRadius, planetRadius, planetColor, planetSpeed){
   radius = orbitRadius/2;
   noStroke();
   fill(planetColor);
-  angle = angle + speed;
+  angle= angle+planetSpeed;
   rotate(angle);
   circle(radius, 0, planetRadius);
   
